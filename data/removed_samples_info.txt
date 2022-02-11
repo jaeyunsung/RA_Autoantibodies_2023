@@ -1,0 +1,15 @@
+2 patients on Rituximab and so were removed:
+Case08, Case59
+
+Here are the two outliers that were removed:
+
+Case43 #ACPA_neg
+Case19 #ACPA_neg
+
+Control3 #control
+Control14 #control
+Control33 #control
+
+Here are the the 6 samples without CDAI scores that
+were removed:
+Case01, Case03, Case31, Case52, Case53, Case57
