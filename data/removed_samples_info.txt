@@ -1,15 +1,18 @@
-2 patients on Rituximab and so were removed:
-Case08, Case59
+Two patients were removed because they were on Rituximab:
+Case08 #ACPA_neg
+Case59 #ACPA_pos
 
-Here are the two outliers that were removed:
-
+Five samples were deemed as outliers and were therefore removed:
 Case43 #ACPA_neg
 Case19 #ACPA_neg
-
 Control3 #control
 Control14 #control
 Control33 #control
 
-Here are the the 6 samples without CDAI scores that
-were removed:
-Case01, Case03, Case31, Case52, Case53, Case57
+Six RA samples did not have CDAI information and were therefore removed from the analysis in Fig. 4:
+Case01 #ACPA_neg
+Case03 #ACPA_pos
+Case31 #ACPA_neg
+Case52 #ACPA_neg
+Case53 #ACPA_pos
+Case57 #ACPA_pos
