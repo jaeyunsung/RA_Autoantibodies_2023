@@ -8,7 +8,7 @@ This repository contains the source code to reproduce the main data presented in
 The 'scripts' directory contains several R scripts for running the analysis pipelines for this project. Each script calls local data from the 'data' directory, and all results used to generate the main manuscript's display items are automatically put into the
 'output' directory.
 
-The scripts in this directory are the following:
+The scripts found in this repository are the following:
 
 >differentially_abundant_final.R
 
