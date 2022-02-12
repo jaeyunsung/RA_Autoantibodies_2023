@@ -6,7 +6,6 @@ library("ggplot2")
 ## -----------------------------------------------------------------------------
 
 cdai_df2 <- read.csv("../data/patient_info_table_v3.csv", header = TRUE)
-
 #View(cdai_df2)
 
 
@@ -52,7 +51,6 @@ for (i in 1:num_features1) {
 #View(spearman_values_df)
 
 
-
 ## -----------------------------------------------------------------------------
 ordered_spearman_values_df <- spearman_values_df[order(-spearman_values_df$Spearman_value),]
 #View(ordered_spearman_values_df)
@@ -66,17 +64,12 @@ features_to_plot_spearman$CISH <- quantile_df$CISH
 features_to_plot_spearman$Sample_Status <- quantile_df$Sample_Status
 
 
-
 ## -----------------------------------------------------------------------------
 scatter_plot <- ggplot(data = features_to_plot_spearman, aes(x = CDAI, y = CISH))+ geom_point(aes(color=Sample_Status))+ geom_smooth(method="lm", se=FALSE)+stat_cor(method = "spearman")+ scale_colour_manual(values = c("gray50","brown1"))+ coord_fixed()
-#
 
 
 ## -----------------------------------------------------------------------------
-
 pdf('../output/Spearman_plot.pdf')
 scatter_plot
 dev.off()
-
-## -----------------------------------------------------------------------------
 
