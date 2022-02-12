@@ -16,7 +16,6 @@ control_df <- filter(quantile_df, quantile_df$Sample_Status == 'control')
 
 quantile_df <- rbind(ACPA_neg_df,ACPA_pos_df,control_df)
 
-
 col_nums = dim(ACPA_pos_df)[2]
 num_features1 <- ncol(quantile_df)-2
 feature_names_only <- data.frame(colnames(ACPA_pos_df[,1:num_features1]))
@@ -52,5 +51,3 @@ PCA1 <- autoplot(pca2, data = sig_feature_df, colour = 'Sample_Status',
 pdf("../output/PCA.pdf")
 PCA1
 dev.off()
-
-
