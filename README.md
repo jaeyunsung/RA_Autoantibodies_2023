@@ -1,16 +1,14 @@
 RA Autoantibodies 2022
 ===================================================
 # Introduction
-This repository contains the source code to regenerate main data presented in Cunningham et al., "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Differences in Circulating Autoantibody Repertoires". Manuscript in preparation.
+This repository contains the source code to reproduce the main data presented in Cunningham et al., "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Differences in Circulating Autoantibody Repertoires". Manuscript in preparation.
 
 # Description
 
-This repository includes several R scripts for running the analysis pipelines for this project. The input data is included in the repository
-and no editing is required to run the scripts. Each script has local data
-that is read in, and all output for the figures are automatically put into the
-output directory.
+The 'scripts' directory contains several R scripts for running the analysis pipelines for this project. Each script calls local data from the 'data' directory, and all results used to generate the main manuscript's display items are automatically put into the
+'output' directory.
 
-The scripts in this repository are the following:
+The scripts in this directory are the following:
 
 >differentially_abundant_final.R
 
@@ -42,7 +40,7 @@ for the CISH gene.
 
 # Data
 
-The raw data and the quantile normalized data are all available.
+The raw data and the quantile normalized data are all available in the 'data' directory.
 There is also a text file named "removed_samples_info.txt" explaining why certain autoantibody samples (corresponding to study participants) were removed.
 
 # Installation
