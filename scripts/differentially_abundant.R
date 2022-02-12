@@ -1,15 +1,11 @@
-
- 
 library(dplyr)
 library(reshape2)
 library(ggpubr)
 library(Hmisc)
 library(preprocessCore)
 library(effsize)
- 
 
 #Functions for analysis
- 
 analysis_part1_plot = function(temp_df, plot_title){
 #plot all samples as box and whisker
   
@@ -76,81 +72,60 @@ get_sigfeatures = function(num_sigfigs, sigfeature_list, data_df, results_df){
   return(results_df)
 }
 
- 
-
 #Read raw data in
-
-
 normal_data_df <- read.csv("../data/normal_data_rows_as_samples.csv")
 #View(normal_data_df)
  
-
 #Feature names only
- 
 num_cols <- ncol(normal_data_df)
 feature_names_df <- colnames(normal_data_df[2:num_cols])
 #View(feature_name_df)
  
-
 #Class labels for samples
- 
 class_labels_df = read.csv("../data/class_labels_with_sample_ID_no_spaces.csv")
 colnames(class_labels_df) <- cbind("Case_ID", "Sample_Status")
 #View(class_labels_df)
  
-
 #Get the number of columns for later
  
 #num_cols
 total_samples <- nrow(normal_data_df)
 #total_samples
  
-
-#Combine Case IDs and sample status
- 
+#Combine Case IDs and sample status 
 normal_data_rows_as_samples_to_plot = merge(normal_data_df, class_labels_df, by='Case_ID', all=TRUE)
 #View(normal_data_rows_as_samples_to_plot)
 dim(normal_data_rows_as_samples_to_plot)
- 
 
 #Find sample medians for all data
- 
 normal_data_rows_as_samples_to_plot$Column_Medians <- apply(normal_data_rows_as_samples_to_plot[,2:num_cols], 1, median)
 #View(normal_data_rows_as_samples_to_plot)
  
-
 #Sort by median
- 
 normal_data_rows_as_samples_to_plot <- data.frame(normal_data_rows_as_samples_to_plot[order(normal_data_rows_as_samples_to_plot$Column_Medians, decreasing = FALSE),])
 #View(normal_data_rows_as_samples_to_plot)
 
 
-#Plot all samples by median
- 
+#Plot all samples by median 
 melt_df1 <- melt(normal_data_rows_as_samples_to_plot) #Note: First time calling reshape library
 all_samples_plot <- analysis_part1_plot(melt_df1,"Sample distribution before Normalization")
 #all_samples_plot
  
-
-#Remove top 5
- 
+#Remove top 5 
 reduced_normal_data_df <- normal_data_rows_as_samples_to_plot[1:(nrow(normal_data_rows_as_samples_to_plot)-5),1:(num_cols+1)]
 reduced_df <- melt(reduced_normal_data_df)
 reduced_samples_plot <- analysis_part1_plot(reduced_df,"Sample distribution after reduction")
 #reduced_samples_plot
- 
+
 
 #Two patients were on rituximab treatment so we will remove them
- 
 only_92_samples_df <- subset(reduced_normal_data_df, Case_ID != "Case08" & Case_ID != "Case59") 
 #View(only_92_samples_df)
 
 
 #Do quantile normalization
- 
 remove_list = c("Sample_Status", "Case_ID")
 before_quantile_df = only_92_samples_df[,which(colnames(only_92_samples_df) %nin% remove_list)] 
-
 
 transpose_before_quantile_df = t(before_quantile_df)
 after_quantile_df = normalize.quantiles(transpose_before_quantile_df)
@@ -169,8 +144,6 @@ quantile_plot <- analysis_part1_plot(quantiled_data_df, "Sample distribution aft
 #write.csv(quantile_df, "../RA_Autoantibodies_2022/QN_data_with_class.csv", row.names=FALSE, quote=FALSE)
 
 #Seperate the three groups
- 
-
 ACPA_neg_df <- filter(quantile_92_df, quantile_92_df$Sample_Status == 'ACPA_negative')
 #View(ACPA_neg_df)
 num_ACPA_neg <- nrow(ACPA_neg_df)
@@ -185,7 +158,6 @@ num_control <- nrow(control_df)
  
 
 #Some variables to use
- 
 num_features <- ncol(quantile_92_df) - 2
 #num_features
 feature_list <- feature_names_df
@@ -193,7 +165,7 @@ feature_list <- feature_names_df
  
 
 #ACPA_pos or ACPA_neg is the first group. 
-#ALl positive Cliff's Delta values will indicate higher abundance in RA. 
+#All positive Cliff's Delta values will indicate higher abundance in RA. 
 #All negative Cliff's Delta values will indicate higher abundance in control. 
  
 posVcont_result_table <- make_result_table(ACPA_pos_df, control_df, num_features, feature_list)
@@ -206,7 +178,6 @@ negVcont_result_table <- make_result_table(ACPA_neg_df, control_df, num_features
  
 
 #Select features significant between ACPA_pos and control
- 
 higher_in_ACPApos <- subset(posVcont_result_table, Nominal_pvalue < 0.05 & Cliff_delta > 0.33)
 #View(higher_in_ACPApos)
 
@@ -271,7 +242,6 @@ control_higher_than_pos_sigfeats_df2$Sample_Status <- control_df$Sample_Status
  
 
 #Combine and plot
- 
 higher_in_control_than_in_ACPA_pos_df <- rbind(control_higher_than_pos_sigfeats_df1, control_higher_than_pos_sigfeats_df2 )
 #View(higher_in_control_than_in_ACPA_pos_df)
 Control_ACPA_pos_plot <- autoantibody_boxplots(higher_in_control_than_in_ACPA_pos_df)
@@ -355,4 +325,3 @@ pdf("../output/higher_in_control_than_ACPA_neg.pdf")
 Control_ACPA_neg_plot
 dev.off()
 file.remove("./Rplots.pdf")
-
