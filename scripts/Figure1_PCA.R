@@ -6,16 +6,13 @@ library("factoextra")
 library("ggfortify")
 
 quantile_df <- read.csv("../data/all_quantile_df.csv")
-
 quantile_df$Sample_Status <- as.factor(quantile_df$Sample_Status)
-
 
 ACPA_neg_df <- filter(quantile_df, quantile_df$Sample_Status == 'ACPA_negative')
 ACPA_pos_df <- filter(quantile_df, quantile_df$Sample_Status == 'ACPA_positive')
 control_df <- filter(quantile_df, quantile_df$Sample_Status == 'control')
 
 quantile_df <- rbind(ACPA_neg_df,ACPA_pos_df,control_df)
-
 
 col_nums = dim(ACPA_pos_df)[2]
 num_features1 <- ncol(quantile_df)-2
@@ -32,7 +29,6 @@ for (i in 1:num_features1) {
 }
 
 ordered_anova_pvalues <- ANOVA_pvalues1[order(ANOVA_pvalues1$Pvalue),]
-
 
 features_less_than_0.05 <- ordered_anova_pvalues[which(ordered_anova_pvalues["Pvalue"] < 0.05),]
 num_sig_features <- dim(features_less_than_0.05)[1]
@@ -51,5 +47,3 @@ PCA1 <- autoplot(pca2, data = sig_feature_df, colour = 'Sample_Status',
 pdf("../output/PCA.pdf")
 PCA1
 dev.off()
-
-
