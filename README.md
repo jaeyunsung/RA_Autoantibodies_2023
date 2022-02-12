@@ -1,6 +1,6 @@
 RA Autoantibodies 2022
 ===================================================
-# Reference
+# Bibliography
 Cunningham et al., Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Differences in Circulating Autoantibody Repertoires. Manuscript in preparation.
 
 # Description
