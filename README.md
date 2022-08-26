@@ -21,7 +21,7 @@ library(factoextra)
 library(ggfortify)
 ```
 
-# Data used for this study
+# Data used in this study
 
 The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
 
