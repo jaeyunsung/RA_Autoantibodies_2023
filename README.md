@@ -53,8 +53,11 @@ have statistically significant variance across study groups. If the *P*-value is
 is considered as statistically significant. There are 26 significant features that are plotted in the
 principal component analysis (PCA) plot.
 
+
 >Figure1C_D_ternary_scatter_plots.R
 
+This script uses the quantile normalized autoantibody abundances to build a ternary plot and a fold-change plot.
+The fold-change plot is between ACPA+ RA/Control and ACPA– RA/Control.
 
 
 >Figure5_bubble_plot.R
