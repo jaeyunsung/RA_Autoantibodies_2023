@@ -43,7 +43,7 @@ for the CISH gene.
 This script takes the quantile normalized data and the corresponding RA patients' CDAI. The script finds
 the Spearman correlation between the individual autoantibody abundances and CDAI scores. ACPA+ RA, ACPA–
 RA and all RA patients are the three groups that have Spearman correlations calculated for. The significant 
-correlations (*P*-value < 0.05 & |Rho| > 0.4) are plotted in the bubble plot in the corresponding column.
+autoantibodiest (*P*-value < 0.05 & |rho| > 0.4) are plotted in the bubble plot in the corresponding column.
 
 # Data
 
