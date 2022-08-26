@@ -1,7 +1,7 @@
 RA Autoantibodies 2022
 ===================================================
 # Introduction
-This repository contains the source code to reproduce the main data presented in Cunningham et al., "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Differences in Circulating Autoantibody Repertoires". Manuscript in preparation.
+This repository contains the source code to reproduce the main data presented in Cunningham et al., "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Different Serological Autoantibody Repertoires and Autoantibody Associations with Disease Activity". 
 
 # Description
 
@@ -41,7 +41,6 @@ for the CISH gene.
 # Data
 
 The raw data and the quantile normalized data are all available in the 'data' directory.
-There is also a text file named "removed_samples_info.txt" explaining why certain autoantibody samples (corresponding to study participants) were removed.
 
 # Installation
 
