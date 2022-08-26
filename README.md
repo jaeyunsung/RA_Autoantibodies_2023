@@ -1,7 +1,7 @@
 RA Autoantibodies 2022
 ===================================================
 # Introduction
-This repository contains the source code to reproduce the main data presented in Cunningham et al., "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Different Serological Autoantibody Repertoires and Autoantibody Associations with Disease Activity". 
+This repository contains the source code to reproduce the main data presented in Cunningham *et al.*, "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Different Serological Autoantibody Repertoires and Autoantibody Associations with Disease Activity". 
 
 # Description
 
@@ -14,7 +14,7 @@ The scripts found in this repository are the following:
 
 This script take in the raw data and first transforms the data via quantile normalization.
 Next, the script finds significant autoantibodies using a Mann-Whitney U test
-and Cliff's delta effect size. Significant features have a P-value less than
+and Cliff's delta effect size. Significant features have a *P*-value less than
 0.05 and an absolute Cliff's delta value greater than 0.33. There are four plots
 that are made from running this script. Each shows the RA abundance and the control
 abundance for comparison.
@@ -27,7 +27,7 @@ This transformed dataset is used to make a heatmap of all 1,622 features for all
 >Figure1_PCA.R
 
 This script takes the quantile normalized data and first runs an ANOVA test to find features that
-are statistically significant. If the P-value is less than 0.05 then the feature is
+are statistically significant. If the *P*-value is less than 0.05 then the feature is
 considered significant. There are 26 significant features that are then plotted in the
 principal components analysis (PCA) plot.
 
@@ -43,7 +43,7 @@ for the CISH gene.
 This script takes the quantile normalized data and the corresponding RA patients' CDAI. The script finds
 the Spearman correlation between the individual autoantibody abundances and CDAI scores. ACPA+ RA, ACPA–
 RA and all RA patients are the three groups that have Spearman correlations calculated for. The significant 
-correlations (P-value < 0.05 & |Rho| > 0.4) are plotted in the bubble plot in the corresponding column.
+correlations (*P*-value < 0.05 & |Rho| > 0.4) are plotted in the bubble plot in the corresponding column.
 
 # Data
 
