@@ -37,7 +37,7 @@ The scripts found in this repository are the following:
 This script takes in the raw autoantibody abundance data and transforms the RFU values using quantile normalization.
 Next, the script finds statistically significant autoantibodies using a Mann-Whitney *U* test
 and the Cliff's delta effect size. Significant features have a *P*-value less than
-0.05 and an absolute Cliff's delta value greater than 0.33 (i.e., moderate effect size). There 
+0.05 and an absolute Cliff's delta value greater than 0.33 (*i.e.*, moderate effect size). There 
 are four grid plots that are made from running this script (Figures 2 and 3). Each grid plot shows the autoantibodies' abundances 
 in an RA subgroup and controls.
 
