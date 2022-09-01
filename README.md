@@ -63,7 +63,7 @@ The fold-change plot is between ACPA+ RA/Control and ACPA– RA/Control.
 >Figure5_bubble_plot.R
 
 This script takes the quantile normalized data and the corresponding RA patients' CDAI. The script finds
-the Spearman correlation between the individual autoantibody abundances and CDAI scores. ACPA+ RA, ACPA–
+the Spearman correlation (rho) between the individual autoantibody abundances and CDAI scores. ACPA+ RA, ACPA–
 RA, and all RA patients (*i.e.*, ACPA+ RA and ACPA– RA) are the three groups for which we calculate Spearman correlations.
 The significant autoantibodies (*P*-value < 0.01 & |rho| > 0.4) are plotted in the bubble plot.
 
