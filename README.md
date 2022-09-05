@@ -31,11 +31,11 @@ Quantile normalized autoantibody abundance data.
 
 >patient_info_table.csv
 
-Clinical Disease Activity Index (CDAI) scores of RA patients. Of note, only CDAI scores above 0 (n = 56) are used to find correlations with autoantibody abundances.
+Clinical Disease Activity Index (CDAI) scores of RA patients. Of note, only CDAI scores above 0 (n = 56) are shown.
 
 >quantile_for_CDAI_scatterplots.csv
 
-Quantile normalized autoantibody abundance data for RA patients whose CDAI scores were above 0 (n = 56).
+Quantile normalized autoantibody abundance data for RA patients whose CDAI scores are above 0 (n = 56).
 
 >raw_92_samples.csv
 
