@@ -23,6 +23,16 @@ library(ggfortify)
 
 # Data used in this study
 
+>all_quantile_df.csv
+The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+
+>patient_info_table.csv
+The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+
+>quantile_for_CDAI_scatterplots.csv
+The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+
+>raw_92_samples.csv
 The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
 
 # Description of scripts
