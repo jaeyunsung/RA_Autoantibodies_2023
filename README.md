@@ -1,7 +1,7 @@
 RA Autoantibodies 2022
 ===================================================
 # Introduction
-This repository contains the source code to reproduce the main data presented in "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Different Serological Autoantibody Repertoires and Autoantibody Associations with Disease Activity" by Cunningham *et al.* (submitted). 
+This repository contains the source code to reproduce the main data presented in "Patients with ACPA-positive and ACPA-negative Rheumatoid Arthritis Show Different Serological Autoantibody Repertoires and Autoantibody Associations with Disease Activity" by Cunningham *et al.* (manuscript submitted for publication). 
 
 # Installation
 
@@ -27,8 +27,7 @@ The raw autoantibody abundance (RFU) data and the quantile normalized data are a
 
 # Description of scripts
 
-The 'scripts' directory contains several R scripts for running the analysis pipelines for this project. Each script calls local data from the 'data' directory, and all results used to generate the main manuscript's display items are automatically put into the
-'output' directory.
+The 'scripts' directory contains several R scripts for running the analysis pipelines for this project. Each script calls local data from the 'data' directory. All results used to generate the main text's display items are automatically put into the 'output' directory.
 
 The scripts found in this repository are the following:
 
