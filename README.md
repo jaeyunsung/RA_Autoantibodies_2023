@@ -21,27 +21,29 @@ library(factoextra)
 library(ggfortify)
 ```
 
-# Data used in this study
+# Description of data used in this study
+
+The 'data' directory contains the following input files for the analysis pipelines of this project:
 
 >all_quantile_df.csv
 
-The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+Quantile normalized autoantibody abundance data.
 
 >patient_info_table.csv
 
-The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+Clinical Disease Activity Index (CDAI) scores of RA patients. Of note, only CDAI scores above 0 (n = 56) are used to find correlations with autoantibody abundances.
 
 >quantile_for_CDAI_scatterplots.csv
 
-The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+Quantile normalized autoantibody abundance data for RA patients whose CDAI scores were above 0 (n = 56).
 
 >raw_92_samples.csv
 
-The raw autoantibody abundance (RFU) data and the quantile normalized data are all available in the 'data' directory.
+Raw autoantibody abundance (RFU) data.
 
 # Description of scripts
 
-The 'scripts' directory contains several R scripts for running the analysis pipelines for this project. Each script calls local data from the 'data' directory. All results used to generate the main text's display items are automatically exported into the 'output' directory.
+The 'scripts' directory contains several R scripts for running the analysis pipelines of this project. Each script calls local data from the 'data' directory. All results used to generate the main text's display items are automatically exported into the 'output' directory.
 
 The scripts found in this repository are the following:
 
@@ -77,7 +79,7 @@ The scatter-plot compares fold-changes of ACPA+ RA vs. Controls and of ACPA– R
 
 >Figure5_bubble_plot.R
 
-This script takes the quantile normalized data and the corresponding RA patients' Clinical Disease Activity Index (CDAI) scores. The Spearman correlation (rho) between the individual autoantibody abundances and CDAI scores are found. ACPA+ RA, ACPA–
+This script takes the quantile normalized data and the corresponding RA patients' CDAI scores. The Spearman correlation (rho) between the individual autoantibody abundances and CDAI scores are found.  Of note, only CDAI scores above 0 (n = 56) are used to find correlations with autoantibody abundances. ACPA+ RA, ACPA–
 RA, and all RA patients (*i.e.*, combining both ACPA+ RA and ACPA– RA into a single group) are the three groups for which we calculate Spearman correlations.
 Only the significant autoantibodies (*P*-value < 0.01 & |*rho*| > 0.4) are shown in the bubble plot.
 
